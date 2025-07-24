@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var photoName = "drink"
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack{
+            Text("cute")
+            Image(photoName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+            Button("more pics pls"){
+                photoName = "sleep"
+            }
+            .font(.title2)
+            .buttonStyle(.borderedProminent)
+            .tint(.purple)
+            .padding()
         }
-        .padding()
-    }
-}
+    }//body
+}//struct
 
 #Preview {
     ContentView()
